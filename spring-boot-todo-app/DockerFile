@@ -1,0 +1,5 @@
+FROM java:8
+VOLUME /tmp
+EXPOSE 8080
+ADD /target/spring-boot-todo-app-0.0.1-SNAPSHOT.jar spring-boot-todo-app.jar
+ENTRYPOINT ["java","-jar", "spring-boot-todo-app.jar"]

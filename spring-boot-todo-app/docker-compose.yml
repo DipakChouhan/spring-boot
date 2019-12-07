@@ -1,0 +1,20 @@
+version: "3"
+services:
+  todoApp:
+    image: owneroftime/practice001:todoApp
+    ports:
+      - "8080:8080"
+    networks:
+      - todo-mysql
+    depends_on:
+      - todoMysqlDB
+ 
+  todoMysqlDB:
+    image: owneroftime/practice001:todoMySQL
+    networks:
+      - todo-mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=12345678
+      - MYSQL_DATABASE=todo 
+networks:
+  todo-mysql:

@@ -3,7 +3,11 @@ package com.owneroftime.databean;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.validation.constraints.NotNull;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.owneroftime.model.DownloadUploadModel;
 
@@ -13,7 +17,46 @@ public class ExcelDatabaseDataBean {
 	private DownloadUploadModel downUpModel;
 	private boolean upload = false;
 	private boolean download = false;
+	private MultipartFile file = null;
+	private List<String> errorList;
+	@Autowired
+	private CommonDataBean commonBean;
 
+	/**
+	 * @return the commonBean
+	 */
+	public CommonDataBean getCommonBean() {
+		return commonBean;
+	}
+
+	/**
+	 * @param commonBean the commonBean to set
+	 */
+	public void setCommonBean(CommonDataBean commonBean) {
+		this.commonBean = commonBean;
+	}
+
+	public List<String> getErrorList() {
+		if (null == errorList) {
+			errorList = new ArrayList<String>();
+		}
+		return errorList;
+	}
+
+	/**
+	 * @return the file
+	 */
+	public MultipartFile getFile() {
+		return file;
+	}
+
+	/**
+	 * @param file the file to set
+	 */
+	public void setFile(MultipartFile file) {
+		this.file = file;
+	}
+	
 	/**
 	 * @return the downUpModel
 	 */
@@ -23,7 +66,6 @@ public class ExcelDatabaseDataBean {
 		}
 		return downUpModel;
 	}
-
 
 	/**
 	 * @return the upload

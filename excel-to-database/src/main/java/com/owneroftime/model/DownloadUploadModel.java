@@ -4,6 +4,36 @@ package com.owneroftime.model;
 public class DownloadUploadModel {
 	private String uploadTableName;
 	private String downloadTableName;
+	private String uploadTableSchemaName;
+	private String downloadTableSchemaName;
+
+	/**
+	 * @return the uploadTableSchemaName
+	 */
+	public String getUploadTableSchemaName() {
+		return uploadTableSchemaName;
+	}
+
+	/**
+	 * @param uploadTableSchemaName the uploadTableSchemaName to set
+	 */
+	public void setUploadTableSchemaName(String uploadTableSchemaName) {
+		this.uploadTableSchemaName = uploadTableSchemaName;
+	}
+	
+	/**
+	 * @return the downloadTableSchemaName
+	 */
+	public String getDownloadTableSchemaName() {
+		return downloadTableSchemaName;
+	}
+
+	/**
+	 * @param downloadTableSchemaName the downloadTableSchemaName to set
+	 */
+	public void setDownloadTableSchemaName(String downloadTableSchemaName) {
+		this.downloadTableSchemaName = downloadTableSchemaName;
+	}
 
 	/**
 	 * @return the uploadTableName
